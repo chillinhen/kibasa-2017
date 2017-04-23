@@ -1,0 +1,16 @@
+
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link:hover {
+  text-decoration: none;
+  background-color: #a52080;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a52080;), to(#ee3700));
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #a52080;, #ee3700)!important;
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(top, #a52080;, #ee3700)!important;
+  /* FF3.6+ */
+  background-image: -ms-linear-gradient(top, #a52080;, #ee3700);
+  /* IE10 */
+  background-image: -o-linear-gradient(top, #a52080;, #ee3700);
+  /* Opera 11.10+ */
+  background-image: linear-gradient(to bottom, #a52080;, #ee3700);
+}

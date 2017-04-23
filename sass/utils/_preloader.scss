@@ -1,0 +1,21 @@
+.wf-loading /**vorm body **/ {
+    * {
+        opacity: 0;
+    }
+/*    @include alpha-background-color(rgba(black, 0.25), white);*/
+   background:{
+        color:rgba(0,0,0,1);
+        image:url('../img/spin.gif');
+        repeat:no-repeat;
+        position:center center;
+    }
+     height: 100%;
+    overflow: hidden;
+}
+.wf-active, 
+.wf-inactive{
+    *{
+    @include transition(opacity 1s ease-out);
+    }
+}
+

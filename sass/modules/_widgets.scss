@@ -1,0 +1,50 @@
+/** Facebook Stream ***/
+.fts-jal-fb-group-display{
+    @media screen and (min-width:$screen-xs) and (max-width:$screen-sm){
+        -webkit-column-count: 2; /* Chrome, Safari, Opera */
+        -moz-column-count: 2; /* Firefox */
+        column-count: 2;
+    }
+    @media screen and (min-width:$screen-md){
+        -webkit-column-count: 4; /* Chrome, Safari, Opera */
+        -moz-column-count: 4; /* Firefox */
+        column-count: 4;
+    }
+}
+.fts-jal-fb-header{
+    display:none;
+}
+.fts-jal-fb-group-header-desc{
+    white-space:pre-line;
+    line-height:1.5em;
+}
+.widget .fts-jal-single-fb-post{
+    padding: .53em !important;
+    border: 1px solid #e8e4e3;
+    margin: 0 auto 2em;
+     -webkit-column-break-inside: avoid;
+}
+.fts-jal-fb-user-name{
+    font-size:1.1rem;
+    padding-top:0;
+    font-weight:normal;
+    a {
+        font-size:1.2em;
+        font-weight:bold;
+    }
+}
+.fts-jal-fb-post-time{
+    line-height:14px;
+}
+.fts-jal-fb-message{
+    font-weight:600;
+}
+a.fts-powered-by-text{
+    clear:both;
+    width:100%;
+    font-weight:300;
+    font-size:smaller;
+    text-align:center;
+    border-top:1px solid #ccc;
+    padding-top:1em;
+}

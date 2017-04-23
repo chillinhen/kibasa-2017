@@ -1,0 +1,195 @@
+/*** Grid ***/
+/*@mixin outer-container($width){
+    max-width: $width;
+    margin-left: auto;
+    margin-right: auto;
+}*/
+@mixin collapse-vert-style{
+        margin-top: 0;
+}
+@mixin active-style {
+	background:$brand-primary;
+        background-image:none !important;
+	color:$white;
+}
+    
+/*** Carousel ***/
+@mixin carousel-caption($bg,$pos,$top,$left,$align,$z) {
+    background: $bg;
+    position: $pos;
+    top: $top;
+    left: $left;
+    width: inherit;
+    text-align: $align;
+    text-shadow: none;
+    z-index: $z;
+}
+@mixin carousel-indicator-style($box-size,$bd,$indent,$color,$align) {
+    height: $box-size;
+    width: $box-size;
+    line-height: $box-size;
+    border: $bd;
+    text-indent: $indent;
+    color: $color;
+    text-align: $align;
+}
+@mixin carousel-control-style ($bg,$bd,$size,$weight,$box-size,$mg-t,$op,$pos,$top,$left,$align,$color,$bg-img){
+    background: $bg;
+    border: $bd;
+    font-size: $size;
+    font-weight: $weight;
+    height: $box-size;
+    line-height: $box-size;
+    margin-top: $mg-t;
+    opacity: $op;
+    position: $pos;
+    top: $top;
+    left: $left;
+    text-align: $align;
+    width: $box-size;
+    color: $color;
+    background-image: none;
+    text-shadow: none;
+}
+/**** caret ****/
+@mixin caret-right-style ($size,$ml) {
+    border-bottom: $size solid transparent;
+    border-left: $size solid currentColor;
+    border-top: $size solid transparent;
+    border-width: $size 0 $size $size;
+    margin-left: $ml;
+}
+@mixin caret-down-style ($size) {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: currentColor;
+    border-width: $size; 
+    border-style: solid;
+}
+
+/*** News bubble ***/
+@mixin bubble-style {
+    border: $light-gray 1px solid;
+    padding: 14px 12px;
+    position: relative;
+    }
+
+/*** Panels ***/
+@mixin panel-styling {
+        /** Inner Panel Positions ***/
+    @include flexbox-container;
+    justify-content: space-between;
+    @include flex-wrap(column,wrap);
+/*    > h3 > a {display: block;overflow:hidden;}*/
+    > h3, .btn {
+        @include flex(1);
+    }
+    > .text{
+        @include flex(2);
+    }
+    > .btn {
+        max-height:36px;
+        max-width: 180px;
+    }
+    > h3 {
+    max-height:60px;
+  
+    }
+}
+
+/*** Buttons ***/
+@mixin button-style ($r, $pd, $font) {
+    -webkit-border-radius: $r;
+    border-radius: $r;
+    border-width: 0;
+    box-shadow: none;
+    padding: $pd;
+    font-size: $font;
+    line-height: 1;
+}
+
+.foo{
+    border:1px solid $foo;
+}
+
+/**** Flexbox ***/
+
+@mixin flexbox{
+    @include display(flex);
+    @include justify-content(flex-start);
+    @include align-items(stretch);
+    @media screen and (max-width:$screen-sm){@include flex-direction(column);}
+    @media screen and (min-width:$screen-md){@include flex-direction(row);}
+}
+
+@mixin toggle-nav-bar($size,$span-height,$col,$col-acive){
+    @include size ($size);
+    position: relative;
+    @include transform(rotate(0deg));
+    cursor: pointer;
+    span {
+        display: block;
+        position: absolute;
+        height: $span-height;
+        width: 100%;
+        background: $col;
+        opacity: 1;
+        left: 0;
+        @include border-radius (1.5 * $span-height);
+        @include transform(rotate(0deg));
+        @include transition(all .25s ease-in-out);
+        &:nth-child(1) {
+            top: 0px;
+        }
+        &:nth-child(2),&:nth-child(3) {
+            top: 2 * $span-height;
+        }
+
+        &:nth-child(4) {
+            top: 4 * $span-height;
+        }
+    }
+    &.open span{
+        background: $col-acive;
+    }
+    &.open span:nth-child(1),&.open span:nth-child(4) {
+        top: 2 * $span-height;
+        width: 0%;
+        left: 50%;
+    }
+
+    &.open span:nth-child(2) {
+        @include transform(rotate(45deg));
+    }
+
+    &.open span:nth-child(3) {
+        @include transform(rotate(-45deg));
+    }
+}
+
+
+/*** Infographic ***/
+@mixin level-style($bg-col){
+    .number,.right-col{
+        @include alpha-background-color(rgba($bg-col, 1), $bg-col);
+        *{
+            color:lighten($bg-col,100%);
+        }
+        &:hover{
+            @include transition (background,500ms, ease-in-out);
+            @include alpha-background-color(rgba($bg-col, 0.6), $bg-col);
+        }
+    }
+}
+
+
+/*** Borders ***/
+/**** seperator *****/
+@mixin separator($width){
+     border:{
+        width:$width;
+        style:solid;
+        color:currentColor;
+    }
+}

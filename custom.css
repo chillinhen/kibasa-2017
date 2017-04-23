@@ -1,0 +1,85 @@
+/* 
+WOO CUSTOM STYLESHEET
+---------------------
+
+Instructions:
+
+Add your custom styles in this file instead of style.css so it 
+is easier to update the theme. Simply copy an existing style 
+from style.css to this file, and modify it to your liking. */
+
+
+/* 
+GLOBAL STYLES
+----------------
+Add styles beneath this line that you want to be applied across your entire site */
+
+
+/* 
+DESKTOP STYLES
+-----------------
+Add styles inside the media query below that you only want to be applied to the desktop layout of your site */
+
+@media only screen and (min-width: 768px) {
+	/* Desktop styles go here */
+}
+.homepage-banner:after {
+	background: none;
+}
+.homepage-banner h1{
+	padding-top: 150px;
+}
+.homepage-banner h1 span {
+	color: #73BF94;
+}
+.homepage-banner .description {
+	color: #73BF94;
+	padding-top: 130px;
+	
+	}
+#header #logo {
+	margin-bottom:0px;
+	}
+#header hgroup {
+	margin-bottom:0px;
+	}
+#header {
+    padding-bottom: 0.5em;
+    padding-top: 1.5em;
+}
+
+
+.post img.frei, .type-page img.frei{
+	border: none;
+	background: #fcfcfc none repeat;
+	}
+.homepage-werbe-banner{
+	display: block;
+    margin-bottom: 1.631em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95.949em;
+    position: relative;
+	text-align: center;
+}
+#sidebar-header .widget h3{
+	Border: none;
+}
+#sidebar-header {
+	float: right;
+	display: block;
+	padding-right: 5em;
+	}
+.grid-news-thumb{
+	height: 137px !important;
+	}
+.news_pagination{
+	padding: 0px 0px !important;
+	}	
+.news .news-title a {
+    font-size: 1.1em;
+    line-height: 26px;
+}
+.homepage-news .news {
+	margin-bottom: 20px !important;
+}

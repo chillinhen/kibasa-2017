@@ -1,0 +1,43 @@
+#header #navigation {
+    @media screen and (min-width:$screen-lg){
+        margin-top: 3.7em;
+    }
+    ul.nav {
+        > li {
+            a {
+                border: 0;
+                background: #fff;
+                font-weight: normal;
+                border-radius: 0;
+                text-transform: uppercase;
+                @media screen and (max-width:$screen-smallPad){
+                    font-size:1em;
+                }
+                @media screen and (min-width:$screen-smallPad) and (max-width:$screen-lg){
+                    font-size:.75em;
+                }
+                @media screen and (min-width:$screen-lg){
+                    font-size:larger;
+                }
+            }
+        }
+        > li.current-menu-item:after,
+            > li.current_page_item:after{
+            content: ' ';
+            display:block;
+            width:100%;
+            height:3px;
+            background:#a52080;
+        }
+        li.facebook a span{
+            font-weight:bold;
+            text-transform:lowercase;
+            color:#a52080;
+        }
+    }
+}
+a#logo{
+   @media screen and (min-width:$screen-sm) and (max-width:$screen-lg){
+        width: 12vW;
+    } 
+}

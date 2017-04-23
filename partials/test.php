@@ -1,0 +1,1 @@
+<?php $eventText = get_field('test');echo $eventText; ?>

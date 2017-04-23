@@ -1,0 +1,49 @@
+
+.colPrimary{
+    fill:$brand-primary;   
+}
+.colSecondary{
+    fill:$brand-secondary;   
+}
+.colBase{
+    fill:lighten($brand-primary,100%);
+}
+.colGrey{
+    fill: $dark-gray;
+}
+.logo-subline{
+    display:none;
+}
+
+.post-edit-link{
+    font-size:$rem-base;
+    text-transform:none;
+    color:$brand-primary;
+    @include border-radius (4px);
+    a:hover, a:focus{text-decoration:none;}
+    &:before{
+        @include icon-style ("\f040", .5em, 1, .5em, 1em);
+    }
+    .box & > span{
+        display:inline-block;
+    }
+}
+
+.scroll-to-top {
+    background: $brand-primary;
+    @include border-radius (5px);
+    bottom: 4%;
+    color: lighten($text-color,100%);
+    cursor: pointer;
+    display: none;
+    font-size: large;
+    padding: 2px 10px;
+    position: fixed;
+    right: 20px;
+    transition: opacity 0.1s linear 0s;
+    z-index: 9999;
+    opacity: 0.4;
+    &:hover {
+        opacity: 0.8;
+    }
+}
