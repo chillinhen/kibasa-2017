@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAHA,aAGa,GAAG,gBAAgB,EAKhC,aAAa,EAKb,aAAa,GAAG,YAAY,CAbtB;EACF,WAAW,EAAE,IAAI;CACpB;;AACD,AAAA,aAAa,GAAG,gBAAgB,CAAC;EAE7B,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,MAAM;CACrB;;AACD,AAAA,aAAa,CAAC;EAEV,gBAAgB,EAAE,GAAG;EACrB,KAAK,EAAE,KAAK;CACf;;AACD,AAAA,aAAa,GAAG,YAAY,CAAC;EAEzB,KAAK,EAAE,GAAG;CACb",
+    "sources": [
+        "snip.scss"
+    ],
+    "names": [],
+    "file": "snip.css"
+}

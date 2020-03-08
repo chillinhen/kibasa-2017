@@ -1,19 +1,13 @@
-
-@import "../../../../../toolbox/bower_components/bourbon/_bourbon.scss";
-@import "../../../../../toolbox/bower_components/neat/app/assets/stylesheets/_neat.scss";
-
-@import "../../../../../toolbox/sass/myMixins/extends.scss";
-@import "../../../../../toolbox/sass/myMixins/mixins.scss";
-@import "../../../../../toolbox/sass/myMixins/breakpoints.scss";
-
+@import "toolbox/bower_components/bourbon/_bourbon.scss";
+@import "toolbox/bower_components/neat/app/assets/stylesheets/_neat.scss";
+@import "toolbox/myMixins/extends.scss";
+@import "toolbox/myMixins/mixins.scss";
+@import "toolbox/myMixins/breakpoints.scss";
 @import 'utils/_variables';
 @import 'base/_colors';
-
 @import 'base/_ui';
 @import 'base/_typography';
 @import 'base/_layout';
 @import 'modules/_navigation';
 @import 'modules/_widgets';
-
-
 @import '_shame';

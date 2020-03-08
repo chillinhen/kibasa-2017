@@ -1,0 +1,163 @@
+@import "_variables";
+@mixin bw(){
+    //Internet Explorer 6 - 9
+    filter: gray;
+
+    //Chrome 19+
+    -webkit-filter: grayscale(100%);
+
+    //Firefox 10+
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+
+    //Standard
+    filter: grayscale(100%);
+}
+@media print{
+    /*** --------------------------Global Setups -----------------------------***/
+    /*** remove clutter ***/
+    .navbar-toggle,
+    .nav,
+    /**.wp-post-image,**/
+    .teaser-pic{
+        display: none !important;
+    }
+
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: none;
+        color: #000;
+    }
+
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 80%;
+        font-style: italic;
+        color:#666;
+    }
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    table {
+        width: 100%;
+    }
+    thead {
+        display: table-header-group;
+    }
+    td, th {
+        text-align: left !important;
+        border-bottom: 1px dotted #ccc;
+        padding:.2em 0;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    img {
+        @include bw();
+        &:not(.logo-img) {
+            max-width: 100% !important;
+        }
+    }
+
+
+    .logo-img{
+        @include bw();
+        position: absolute;
+        top:0;
+        right:-1cm;
+        height:4cm;
+        width:auto;
+        &:after {
+            content: "www.trauer-aachen.de";
+        }
+
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    ul {list-style: none}
+    li {
+        content: "» ";
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    p a {
+        word-wrap: break-word;
+    }
+    li {
+        list-style: square;
+        margin-bottom: 1em;
+    }
+    blockquote{
+        border-width: 0 0 0 3px;
+        border-style: solid;
+        border-color: #ccc;
+        margin-left: 2em;
+        padding-left: 3em;
+        font-size: larger;
+        line-height: 1.4;
+    }
+
+    @page {
+        margin:3cm 2cm;
+    }
+    body {
+        font-family: $baseFontstack;
+        font-size: 1.4;
+        line-height: $baselineHeight;
+        color: $textcolor;
+    }
+
+    h1, h2, h3, h4 {
+        line-height: 1.4;
+    }
+    h1 {
+        font-size: 24pt;
+    }
+
+    h2 {
+        font-size: 14pt;
+        margin-top: 2em;
+    }
+
+    aside  {
+        border:0 !important;
+        margin-top:2em;
+        h2 {font-size: 18pt;}  
+    }
+
+}   

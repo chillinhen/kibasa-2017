@@ -1,24 +1,48 @@
-#header.col-full, #top > nav{
-    @media screen and (min-width: $screen-sm) and (max-width:$screen-lg){
-        @include display(flex);
-        @include align-items(flex-start);
+// a#logo {
+//     @media screen and (min-width: $screen-sm) and (max-width: $screen-lg) {
+//         width: 12vW;
+//     }
+// }
+body {
+    background-color: white !important;
+}
+
+#header {
+    @include display(flex);
+    @include align-items(flex-end);
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0;
+    border-color: $brand-primary !important;
+    #logo {
+        width: 300px;
+        height: auto;
     }
-    @media screen and (min-width: $screen-sm){
-        margin: 0 auto;
-        width: 100%;
-    }
-    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
-        max-width: 75.998em;
-    }
-    @media screen and (min-width: $screen-md + 1) {
-        max-width: 95.949em;
+    // &.col-full,
+    // #top>nav {
+    //     @media screen and (min-width: $screen-sm) and (max-width: $screen-lg) {
+    //         @include display(flex);
+    //         @include align-items(flex-end);
+    //     }
+    //     @media screen and (min-width: $screen-sm) {
+    //         margin: 0 auto;
+    //         width: 100%;
+    //     }
+    //     @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+    //         max-width: 75.998em;
+    //     }
+    //     @media screen and (min-width: $screen-md + 1) {
+    //         max-width: 95.949em;
+    //     }
+    // }
+}
+
+.homepage-banner {
+    @media screen and (min-width: $screen-smallPad) {
+        display: block;
     }
 }
-.homepage-banner{
-    @media screen and (min-width: $screen-smallPad){
-        display:block;
-    }
-}
+
 ul.product-cats {
     margin-left: 0 !important;
     list-style: none;
@@ -39,7 +63,7 @@ ul.product-cats {
             margin-bottom: 0;
         }
         a:hover h3 {
-            color: #a52080 !important;
+            color: $brand-primary !important;
         }
         img {
             width: 100%;
@@ -53,71 +77,77 @@ ul.product-cats {
             background: #fff;
             margin: 0 auto 1em;
         }
-/*        @media screen and (min-width: $screen-xs){
+        /*        @media screen and (min-width: $screen-xs){
             width: 100%;
         }*/
-        @media screen and (max-width: $screen-sm){
-             width: 48%;
-             &:nth-child(2n){
+        @media screen and (max-width: $screen-sm) {
+            width: 48%;
+            &:nth-child(2n) {
                 margin-right: 0;
             }
         }
-        @media screen and (min-width: $screen-sm){
+        @media screen and (min-width: $screen-sm) {
             width: 22.05%;
-            &:last-child{
+            &:last-child {
                 margin-right: 0;
             }
         }
-        
     }
 }
+
 .hero {
     margin: 3em 0;
-
-    @media screen and (min-width: $screen-sm){
+    @media screen and (min-width: $screen-sm) {
         @include display(flex);
         font-size: larger;
-
     }
     .custom-ads {
-        @media screen and (max-width: $screen-sm){
-            display:none;
+        @media screen and (max-width: $screen-sm) {
+            display: none;
         }
-        @media screen and (min-width: $screen-sm){
+        @media screen and (min-width: $screen-sm) {
             text-align: right;
-        }      
+        }
     }
 }
-body:not(.home) #content{
-    margin-top:2em;
-}  
-.footer-wrap{
-    @media screen and (max-width: $screen-smallPad){
-        padding:0 1em;
-        margin:0 -1.618em;
+
+body:not(.home) #content {
+    margin-top: 2em;
+}
+
+.footer-wrap {
+    @media screen and (max-width: $screen-smallPad) {
+        padding: 0 1em;
+        margin: 0 -1.618em;
     }
 }
+
 #footer {
-    @media screen and (min-width: $screen-smallPad){
+    @media screen and (min-width: $screen-smallPad) {
         @include display(flex);
         @include justify-content(space-between);
-    }   
-}  
-#menu-footer-menu{
+    }
+}
+
+#menu-footer-menu {
     @include display(flex);
     @include justify-content(space-between);
-    a{
-        padding:0 .5em;
-        border-right:1px solid currentColor;
+    a {
+        padding: 0 .5em;
+        border-right: 1px solid currentColor;
     }
-    li:last-child a{border:0;}
+    li:last-child a {
+        border: 0;
+    }
 }
+
 .wpcf7-form {
-    @media screen and (min-width: $screen-lg){
-        float:left;
-        margin-right:2em;
+    @media screen and (min-width: $screen-lg) {
+        float: left;
+        margin-right: 2em;
     }
 }
+
 hr {
-    clear:both;
+    clear: both;
 }

@@ -1,43 +1,55 @@
 #header #navigation {
-    @media screen and (min-width:$screen-lg){
-        margin-top: 3.7em;
+    @media screen and (min-width: $screen-lg) {
+        // margin-top: 3.7em;
     }
+    align-self: flex-end;
+    margin: 0;
+    padding: 0;
     ul.nav {
-        > li {
+        float: none;
+        @include display(flex);
+        flex-wrap: nowrap;
+        >li {
+            background-color: transparent;
             a {
                 border: 0;
-                background: #fff;
+                background-color: transparent;
                 font-weight: normal;
                 border-radius: 0;
                 text-transform: uppercase;
-                @media screen and (max-width:$screen-smallPad){
-                    font-size:1em;
+                @media screen and (max-width: $screen-smallPad) {
+                    font-size: 1em;
                 }
-                @media screen and (min-width:$screen-smallPad) and (max-width:$screen-lg){
-                    font-size:.75em;
+                @media screen and (min-width:$screen-smallPad) and (max-width:$screen-lg) {
+                    font-size: .75em;
                 }
-                @media screen and (min-width:$screen-lg){
-                    font-size:larger;
+                @media screen and (min-width:$screen-lg) {
+                    font-size: 1.175em;
+                }
+                &:hover {
+                    background-color: $brand-primary !important;
+                    border: 0;
+                    color: white !important;
                 }
             }
         }
-        > li.current-menu-item:after,
-            > li.current_page_item:after{
+        >li.current-menu-item:after,
+        >li.current_page_item:after {
             content: ' ';
-            display:block;
-            width:100%;
-            height:3px;
-            background:#a52080;
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: $brand-primary;
         }
-        li.facebook a span{
-            font-weight:bold;
-            text-transform:lowercase;
-            color:#a52080;
+        li.facebook a {
+            span {
+                font-weight: bold;
+                text-transform: lowercase;
+                color: $brand-primary;
+            }
+            &:hover span {
+                color: white;
+            }
         }
     }
-}
-a#logo{
-   @media screen and (min-width:$screen-sm) and (max-width:$screen-lg){
-        width: 12vW;
-    } 
 }

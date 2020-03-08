@@ -1,0 +1,180 @@
+@import "reset.css";
+
+$base-font-size:            100% !default;
+$base-line-height:          150% !default;
+$rem-base:                  16px !default;
+
+$paragraph-margin:          1rem;
+
+$headings-font-family:    "Muli", sans-serif !default;
+$body-font-family:        "Open Sans", sans-serif !default;
+
+$heading-text-color:        $dark-color-grey;
+$body-text-color:           $text-color;
+$text-muted-color:          lighten($text-color,25%);
+ %bold{font-weight:600};/** depends on font-fammily**/
+html,
+
+body {
+    font-size: 100%;
+    /*prevents ios safari from zooming on orientation change (maybe)*/
+    -webkit-text-size-adjust: none;
+}
+// body typography
+body {
+    color: $body-text-color;
+    font-family: $body-font-family;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: $headings-font-family;
+    line-height: 1.1;
+    font-weight:400;
+    color: $heading-text-color;
+
+    a{
+        text-decoration: none;
+    }
+}
+// different font-sizes
+h1 {
+  font-size: 1.5em; /* 24px --> 24 ÷ 16 = 1.5 */
+  line-height: 1em; /* 24px --> 24 ÷ 24 = 1 */
+}
+
+h2 {
+  font-size: 1.375em; /* 22px --> 22 ÷ 16 = 1.375 */
+  line-height: 1.0909em; /* 24px --> 24 ÷ 22 = 1.090909(09) */
+}
+
+h3 {
+  font-size: 1.25em; /* 20px --> 20 ÷ 16 = 1.25 */
+  line-height: 1.2em; /* 24px --> 24 ÷ 20 = 1.2 */
+}
+
+h4 {
+  font-size: 1.125em; /* 18px --> 18 ÷ 16 = 1.125 */
+  line-height: 1.333em; /* 24px --> 24 ÷ 18 = 1.3333333(3) */
+}
+
+h5, h6 {
+  font-size: 1em; /* 16px --> 16 ÷ 16 = 1 */
+  line-height: 1.5em; /* 24px --> 24 ÷ 16 = 1.5 */
+}
+// paragraph text
+p {
+    margin: 0 0 $paragraph-margin;
+    font-family: inherit;
+    font-size: $rem-base;
+    font-weight: normal;
+    line-height: $base-line-height;
+
+
+    &.lead {
+        font-size: 1rem * 1.125;
+        line-height: 1.33;
+    }
+}
+
+a{
+    color:$text-color;
+    .logo &{
+        color:$dark-color-grey;
+        body.home & {color:#fff;}
+    }
+    .footer &{
+        text-decoration: none;
+    }
+}
+// lists
+ul,
+ol {
+    padding-left: 1.5rem;
+
+    li {
+        line-height: $base-line-height;
+    }
+
+    &.unstyled {
+        padding: 0;
+        list-style: none;
+    }
+
+    &.inline {
+        margin: 0 1rem $paragraph-margin -1rem;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+
+        & > li {
+            display: block;
+            float: left;
+            margin-left: 1rem;
+            list-style: none;
+        }
+    }
+}
+dl {
+    margin: 0 0 $paragraph-margin;
+    line-height: $base-line-height;
+}
+
+dt {
+    font-weight: bold;
+    /** oder **/
+    @extend %bold;
+}
+
+dd {
+    margin: 0 0 0.5rem;
+}
+// blockquotes
+blockquote {
+    position: relative;
+    margin: 1.5rem 1rem 1.5rem 3rem;
+    text-align: left;
+
+    p {
+        @extend .lead;
+    }
+
+    &:before {
+        content: "“";
+        display: block;
+        position: absolute;
+        top: -1rem;
+        left: -3rem;
+        color: $text-muted-color;
+        font-size: 5rem;
+        line-height: 1;
+    }
+}
+address{
+    font-style: normal;
+    .footer & {
+        
+        p{
+            margin-bottom: $paragraph-margin * 0.2;
+            font-size: .8rem;
+        }
+        > div {
+            margin-bottom: $paragraph-margin * 0.5
+        }
+    }
+}
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.text-muted { color: $text-muted-color; }
+.text-smaller {font-size: smaller;}
+
+/*** tables ****/
+table {
+    width:100%;
+    margin-bottom:2em;
+}

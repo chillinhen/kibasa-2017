@@ -1,0 +1,18 @@
+.header--home > .header__tagline, .btn--warning, .alert--error > .alert__text {
+  font-weight: bold;
+}
+
+.header--home > .header__tagline {
+  color: #333;
+  font-style: italic;
+}
+
+.btn--warning {
+  background-color: red;
+  color: white;
+}
+
+.alert--error > .alert__text {
+  color: red;
+}
+/*# sourceMappingURL=snip.css.map */

@@ -105,6 +105,7 @@ global $woo_options, $woocommerce;
 		</nav><!-- /#navigation -->
 
 		<?php woo_nav_after(); ?>
+		<?php get_template_part('partials/event', 'badge'); ?>
 
 	</header><!-- /#header -->
         

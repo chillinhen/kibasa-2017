@@ -1,0 +1,17 @@
+%bold {
+    font-weight: bold;
+}
+.header--home > .header__tagline {
+    @extend %bold;
+    color: #333;
+    font-style: italic;
+}
+.btn--warning {
+    @extend %bold;
+    background-color: red;
+    color: white;
+}
+.alert--error > .alert__text {
+    @extend %bold;
+    color: red;
+}

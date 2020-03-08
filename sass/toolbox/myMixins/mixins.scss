@@ -1,0 +1,304 @@
+@mixin test(){
+    border:2px dotted $foo;
+}
+@mixin font-color($bg) {
+    @if lightness($bg) < 75% {
+        color:$white !important;
+    }
+    @else {
+        color:$brand-primary;
+    }
+}
+//Grid**/
+@mixin simple-flex-square-grid($margin){
+    @include flex-grow(1);
+    > *{
+        @include flex(1);
+        margin:$margin;
+    }
+    > *:last-child{
+        @include flex-grow(0);
+        @include flex-shrink(0);  
+    }
+}
+/*** Mixins & Placeholders ***/
+@mixin pointer-events($method){
+-moz-pointer-events: $method;
+-webkit-pointer-events: $method;
+-ms-pointer-events: $method;
+pointer-events: $method;
+}
+
+@mixin transform($method, $number){
+    -moz-transform: $method($number);
+    -webkit-transform: $method($number);
+    -ms-transform: $method($number);
+    transform: $method($number);
+}
+
+@mixin appearance($value){
+    -webkit-appearance: $value;
+    -moz-appearance:    $value;
+    appearance:         $value;
+}
+@mixin box-sizing {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+@mixin border-radius ($r){
+    -webkit-border-radius: $r;
+    border-radius: $r;
+    overflow: hidden;
+}
+@mixin border ($width,$style,$color){
+    border: {
+        width: $width;
+        style:$style;
+        color: $color;
+    }
+}
+@mixin bg-color($bg){
+    background-color: $bg;
+    @include font-color($bg)
+}
+
+@mixin circle($item) {
+    width: $item !important;
+    height: $item !important;
+    line-height: $item;
+    @include border-radius ($item/2);
+    overflow:hidden;
+}
+@mixin square($length){
+    height:$length !important;
+    width:$length !important;
+}
+@mixin shadow {
+    -webkit-box-shadow: 0 0 2px 1px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 0 2px 1px rgba(0,0,0,.2);
+    box-shadow: 0 0 2px 1px rgba(0,0,0,.2);
+}
+
+@mixin gray-filter($percent) {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale($percent);
+}
+
+@mixin ellipsis($width){
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow:hidden;
+    width:$width;
+}
+/**** caret ****/
+@mixin caret-right-style ($size,$ml) {
+    border-bottom: $size solid transparent;
+    border-left: $size solid currentColor;
+    border-top: $size solid transparent;
+    border-width: $size 0 $size $size;
+    margin-left: $ml;
+}
+@mixin caret-down-style ($size) {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: currentColor;
+    border-width: $size; 
+    border-style: solid;
+}
+
+@mixin button-style ($r, $pd, $font) {
+    -webkit-border-radius: $r;
+    border-radius: $r;
+    border-width: 0;
+    box-shadow: none;
+    padding: $pd;
+    font-size: $font;
+    line-height: 1;
+}
+@mixin active-style {
+    background:$brand-primary;
+    background-image:none !important;
+    color:#fff;
+}
+@mixin icon-style ($cnt, $pd-ri, $op, $mg-le, $size) {
+    font-family: 'FontAwesome';
+    content: $cnt;
+    padding-right: $pd-ri;
+    opacity: $op;
+    margin-left:$mg-le;
+    font-size:$size;
+    speak: none;
+}
+/*@include icon-style ("\f075", 0, 1, 0, 2em);*/
+
+@mixin carousel-indicator-style($box-size,$bd,$indent,$color,$align) {
+    height: $box-size;
+    width: $box-size;
+    line-height: $box-size;
+    border: $bd;
+    text-indent: $indent;
+    color: $color;
+    text-align: $align;
+}
+@mixin carousel-control-style ($bg,$bd,$size,$weight,$box-size,$mg-t,$op,$pos,$top,$left,$align,$color,$bg-img){
+    background: $bg;
+    border: $bd;
+    font-size: $size;
+    font-weight: $weight;
+    height: $box-size;
+    line-height: $box-size - 10px;
+    margin-top: $mg-t;
+    opacity: $op;
+    position: $pos;
+    top: $top;
+    left: $left;
+    text-align: $align;
+    width: $box-size;
+    color: $color;
+    background-image: none;
+    text-shadow: none;
+}
+@mixin carousel-caption($bg,$pos,$top,$left,$align,$z) {
+    background: $bg;
+    position: $pos;
+    top: $top;
+    left: $left;
+    width: inherit;
+    text-align: $align;
+    text-shadow: none;
+    z-index: $z;
+}
+@mixin bubble-style {
+    border: $light-gray 1px solid;
+    padding: 14px 12px;
+    position: relative;
+}
+@mixin overlay {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.85+0,0+52 */
+background: -moz-linear-gradient(45deg,  rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+@mixin alpha-background-color($color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  background-color: $solid-color;
+  background-color: $color;
+}
+/* Bsp. @include alpha-background-color(rgba(black, 0.35), white); */
+@mixin linearGradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin wp-edit-post{
+    text-align:right;
+    display:block;
+    font-size:smaller;
+    font-style:italic;
+    &:before{
+        @include icon-style ("\f044", .5em, 1, 0, 1em);
+    }
+}
+@mixin text-indent($pos) {
+    text-indent:$pos;
+    display:block;
+    overflow:hidden;
+}
+@mixin rotate($deg){
+    	-webkit-transform: rotate($deg);
+	-moz-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	-o-transform: rotate($deg);
+	transform: rotate($deg);
+}
+@mixin page-break($method){
+        -webkit-column-break-inside: $method;
+          page-break-inside: $method;
+               break-inside: $method;
+}
+
+@mixin target-for-fixed-menu($height){
+    *:target:before{
+        content: ' ';
+        display: block;
+        height: $height;
+        margin: -$height 0 0;
+    }
+}
+/******* SVG *********/
+@mixin svg-scale($size){
+	position: relative; 
+	height: 0; 
+	width: $size; 
+	padding: 0;
+	padding-bottom: $size;
+			
+	svg{
+		position: absolute; 
+	 	height: $size; 
+	 	width: $size; 
+	 	left: 0; 
+	 	top: 0;
+	}
+}
+
+/*** WP Specials ***/
+@mixin screen-reader-text{
+    /* Text meant only for screen readers. */
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    &:focus {
+        background-color: #f1f1f1;
+        border-radius: 3px;
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+        clip: auto !important;
+        color: #21759b;
+        display: block;
+        font-size: 14px;
+        font-size: 0.875rem;
+        font-weight: bold;
+        height: auto;
+        left: 5px;
+        line-height: normal;
+        padding: 15px 23px 14px;
+        text-decoration: none;
+        top: 5px;
+        width: auto;
+        z-index: 100000; /* Above WP toolbar. */
+    }
+
+}
+/**** Filter ****/
+@mixin blur($item){
+      -webkit-filter: blur($item);
+  -moz-filter: blur($item);
+  -o-filter: blur($item);
+  -ms-filter: blur($item);
+  filter: blur($item);
+  z-index:-1;
+}
+/*** typography***/
+@mixin header-subline ($color, $width, $height, $mg-top){
+    &:after {
+        content:'';
+        display:block;
+        height:$height;
+        width:$width;
+        background:$color;
+        margin-top: $mg-top;
+    }
+}
