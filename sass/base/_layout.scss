@@ -18,6 +18,9 @@ body {
         width: 300px;
         height: auto;
     }
+    @media screen and (max-width: $screen-sm) {
+        flex-direction: column;
+    }
     // &.col-full,
     // #top>nav {
     //     @media screen and (min-width: $screen-sm) and (max-width: $screen-lg) {
@@ -123,21 +126,32 @@ body:not(.home) #content {
 }
 
 #footer {
-    @media screen and (min-width: $screen-smallPad) {
-        @include display(flex);
+    @include display(flex);
+    @media screen and (max-width: $screen-smallPad) {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    @media screen and (min-width: $screen-smallPad + 1) {
         @include justify-content(space-between);
     }
 }
 
 #menu-footer-menu {
     @include display(flex);
-    @include justify-content(space-between);
-    a {
-        padding: 0 .5em;
-        border-right: 1px solid currentColor;
+    @media screen and (max-width: $screen-smallPad) {
+        flex-direction: column;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
     }
-    li:last-child a {
-        border: 0;
+    @media screen and (min-width: $screen-smallPad + 1) {
+        @include justify-content(space-between);
+        a {
+            padding: 0 .5em;
+            border-right: 1px solid currentColor;
+        }
+        li:last-child a {
+            border: 0;
+        }
     }
 }
 

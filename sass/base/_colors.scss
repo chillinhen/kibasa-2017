@@ -63,7 +63,8 @@
     background-color: $brand-primary;
     background-image: none;
     border: 0.202em solid 0;
-    @include shadow;
+    text-shadow: none;
+    border: 0;
 }
 
 #header #navigation ul.nav {
@@ -133,7 +134,7 @@ button.button {
     background-color: $brand-primary;
     background-image: none;
     border: 0;
-    @include shadow;
+    text-shadow: none;
     &:hover {
         background-color: $brand-primary;
         background-image: none;
@@ -143,4 +144,8 @@ button.button {
         background-color: $brand-primary;
         background-image: none;
     }
+}
+
+a:hover {
+    color: $brand-primary;
 }

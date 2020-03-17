@@ -1,54 +1,78 @@
-h1{
+body {
+    font-family: "Open Sans", sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a.btn,
+a[class*="button"] {
+    font-family: "Bree Serif", sans-serif !important;
+}
+
+h1 {
     body.home #main &,
-    .fb-stream &{
-        text-align:center;
-        margin:2em 0 1em 0;
+    .fb-stream & {
+        text-align: center;
+        margin: 2em 0 1em 0;
     }
 }
-.lead{
-    font-size:larger;
+
+.lead {
+    font-size: larger;
 }
-.cta-button{
+
+.cta-button {
     font-family: "Bree Serif", sans-serif;
     font-weight: normal;
     line-height: 1.387em;
-    font-size:1.2em;
-    @media screen and (min-width:$screen-lg){
-            font-size:1.8em;
-        }
+    font-size: 1.2em;
+    @media screen and (min-width: $screen-lg) {
+        font-size: 1.8em;
+    }
 }
-.metaslider .caption-wrap{
-    text-align:center;
+
+.metaslider .caption-wrap {
+    text-align: center;
     font-family: "Bree Serif", sans-serif;
     font-weight: normal;
-    padding:.5em 0;
-    .caption p:first-child ~ p{
-        @media screen and (min-width:$screen-sm) and (max-width:$screen-lg){
+    padding: .5em 0;
+    .caption p:first-child~p {
+        @media screen and (min-width: $screen-sm) and (max-width: $screen-lg) {
             font-size: 1em;
             line-height: 1;
-        } 
-        @media screen and (min-width:$screen-lg){
+        }
+        @media screen and (min-width:$screen-lg) {
             font-size: 1.618em;
             line-height: 1.387em;
         }
     }
     .caption p:first-child {
-                    @media screen and (min-width:$screen-sm) and (max-width:$screen-md){
-                font-size: 1.25em;
-                line-height: 1.2;
-            } 
-            @media screen and (min-width:$screen-lg){
-                font-size: 2.244em;
-                line-height: 1.387em;
-            }
+        @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+            font-size: 1.25em;
+            line-height: 1.2;
+        }
+        @media screen and (min-width:$screen-lg) {
+            font-size: 2.244em;
+            line-height: 1.387em;
+        }
     }
 }
-#menu-footer-menu{
-    list-style:none;
-    li.facebook a{
-        &:before{@include icon-style ("\f082", 0, 1, 0, 1em);}
-        > span{display:none;}
-    }
 
-    a{font-weight:normal;}
+#menu-footer-menu {
+    list-style: none;
+    li.facebook a {
+        &:before {
+            @include icon-style ("\f082", 0, 1, 0, 1em);
+        }
+        >span {
+            display: none;
+        }
+    }
+    a {
+        font-weight: normal;
+    }
 }

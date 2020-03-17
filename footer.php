@@ -73,7 +73,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 			</div>
                     <div id="footer-menu">
                         <?php wp_nav_menu(array('theme_location' => 'footer-links', 'menu_class' => 'footer-menu', 'container' => '', 'fallback_cb' => 'my_menu')); ?>
-                    </div>
+					</div>
                     
 
 		</footer><!-- /#footer  -->

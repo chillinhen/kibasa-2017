@@ -34,51 +34,54 @@
 }
 
 .badge {
-    background-color: #fff;
-    border: 1px solid $brand-primary;
-    text-align: center;
-    @include shadow;
-    @include display(flex);
-    @include flex-direction(row);
-    @include align-items(center);
-    h2 {
-        margin: 0;
-        width: 300px;
-        padding: 0 1em;
-        span {
-            display: block;
-            margin-top: 1em;
-            color: $brand-primary;
-        }
-    }
-    @media screen and (max-width: $screen-smallPad - 1) {
-        max-width: 300px;
-        margin: 2em auto;
-    }
-    @media screen and (min-width: $screen-smallPad) {
-        position: absolute;
-        top: -50%;
-        right: -2%;
-        z-index: 999;
-        background-image: url('../img/bubbles-top.svg'), url('../img/bubbles-bottom.svg');
-        background-repeat: no-repeat;
-        background-size: 45% auto, 35% auto;
-        background-position: 70% 5%, 25% 95%;
-        @include circle(200px);
+    display: none;
+    body.home & {
+        background-color: #fff;
+        border: 1px solid $brand-primary;
+        text-align: center;
+        @include shadow;
+        @include display(flex);
+        @include flex-direction(row);
+        @include align-items(center);
         h2 {
-            font-size: 1em;
+            margin: 0;
+            width: 280px;
+            padding: 0 1em;
+            span {
+                display: block;
+                margin-top: 1em;
+                color: $brand-primary;
+            }
         }
-    }
-    @media screen and (min-width:$screen-smallPad+1) and (max-width:$screen-lg) {
-        top: 140%;
-        right: -5%;
-    }
-    @media screen and (min-width:$screen-lg) {
-        top: 140%;
-        right: -5%;
-        @include circle(300px);
-        h2 {
-            font-size: 1.387em;
+        @media screen and (max-width: $screen-smallPad - 1) {
+            max-width: 300px;
+            margin: 2em auto;
+        }
+        @media screen and (min-width: $screen-smallPad) {
+            position: absolute;
+            top: -50%;
+            right: -2%;
+            z-index: 999;
+            background-image: url('../img/bubbles-top.svg'), url('../img/bubbles-bottom.svg');
+            background-repeat: no-repeat;
+            background-size: 45% auto, 35% auto;
+            background-position: 70% 5%, 25% 95%;
+            @include circle(200px);
+            h2 {
+                font-size: 1em;
+            }
+        }
+        @media screen and (min-width:$screen-smallPad+1) and (max-width:$screen-lg) {
+            top: 140%;
+            right: -5%;
+        }
+        @media screen and (min-width:$screen-lg) {
+            top: 140%;
+            right: -5%;
+            @include circle(300px);
+            h2 {
+                font-size: 1.387em;
+            }
         }
     }
 }

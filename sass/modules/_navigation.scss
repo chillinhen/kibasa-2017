@@ -1,14 +1,24 @@
 #header #navigation {
-    @media screen and (min-width: $screen-lg) {
-        // margin-top: 3.7em;
+    @media screen and (max-width: $screen-xs) {
+        width: 100%;
+        background-image: none;
+        background-color: #faf9f9;
     }
-    align-self: flex-end;
+    @media screen and (min-width: $screen-lg) {
+        align-self: flex-end;
+    }
     margin: 0;
     padding: 0;
     ul.nav {
         float: none;
         @include display(flex);
-        flex-wrap: nowrap;
+        @media screen and (max-width: $screen-xs) {
+            width: 100%;
+            flex-direction: column;
+        }
+        @media screen and (max-width: $screen-xs + 1) {
+            flex-wrap: nowrap;
+        }
         >li {
             background-color: transparent;
             a {

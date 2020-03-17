@@ -15,14 +15,15 @@ function new_kibasa_theme_setup() {
             #wp_enqueue_style('print');
             wp_enqueue_style('fonts', get_stylesheet_directory_uri() . '/css/fonts.css', 'style', '1.0', 'all', array());
             //Individual Style
-            wp_enqueue_style('kibasa-customs-style', get_stylesheet_directory_uri() . '/css/kibasa-custom.css', 'style', '20200317', 'all', array('parent-sytle','fonts'));
+            wp_enqueue_style('kibasa-customs-style', get_stylesheet_directory_uri() . '/css/kibasa-custom.css', 'style', '20200317', 'all', array('parent-style','fonts'));
         }
     }
     add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
     function theme_enqueue_scripts() {
         wp_register_script('kibasa-custom-script', get_stylesheet_directory_uri() . '/js/custom.js', array(), '1.0.0',false, true); // Custom scripts
         wp_enqueue_script('kibasa-custom-script'); // Enqueue it!
-
+        wp_register_script('cookie-bar', get_stylesheet_directory_uri() . '/cookie-bar/cookiebar-latest.min.js?cookiebar-latest.min.js?theme=white&always=1&showNoConsent=1&showPolicyLink=1', array('jquery'), false, true);
+        wp_enqueue_script('cookie-bar');
     }
     add_action('init', 'my_menus');
     if (!function_exists('my_menus')) {
