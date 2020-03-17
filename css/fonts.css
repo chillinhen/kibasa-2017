@@ -1,0 +1,49 @@
+/* bree-serif-regular - latin_latin-ext */
+
+@font-face {
+    font-family: 'Bree Serif';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/bree-serif-v9-latin_latin-ext-regular.eot');
+    /* IE9 Compat Modes */
+    src: local('Bree Serif Regular'), local('BreeSerif-Regular'), url('../fonts/bree-serif-v9-latin_latin-ext-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/bree-serif-v9-latin_latin-ext-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/bree-serif-v9-latin_latin-ext-regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/bree-serif-v9-latin_latin-ext-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/bree-serif-v9-latin_latin-ext-regular.svg#BreeSerif') format('svg');
+    /* Legacy iOS */
+}
+
+
+/* open-sans-regular - vietnamese_latin_greek_greek-ext_cyrillic-ext_latin-ext_cyrillic */
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/open-sans-v17-vietnamese_latin_greek_greek-ext_cyrillic-ext_latin-ext_cyrillic-regular.eot');
+    /* IE9 Compat Modes */
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('../fonts/open-sans-v17-vietnamese_latin_greek_greek-ext_cyrillic-ext_latin-ext_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/open-sans-v17-vietnamese_latin_greek_greek-ext_cyrillic-ext_latin-ext_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/open-sans-v17-vietnamese_latin_greek_greek-ext_cyrillic-ext_latin-ext_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/open-sans-v17-vietnamese_latin_greek_greek-ext_cyrillic-ext_latin-ext_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/open-sans-v17-vietnamese_latin_greek_greek-ext_cyrillic-ext_latin-ext_cyrillic-regular.svg#OpenSans') format('svg');
+    /* Legacy iOS */
+}
+
+
+/* schoolbell-regular - latin */
+
+@font-face {
+    font-family: 'Schoolbell';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/schoolbell-v10-latin-regular.eot');
+    /* IE9 Compat Modes */
+    src: local('Schoolbell Regular'), local('Schoolbell-Regular'), url('../fonts/schoolbell-v10-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/schoolbell-v10-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/schoolbell-v10-latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/schoolbell-v10-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/schoolbell-v10-latin-regular.svg#Schoolbell') format('svg');
+    /* Legacy iOS */
+}

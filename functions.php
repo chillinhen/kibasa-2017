@@ -9,12 +9,13 @@ function new_kibasa_theme_setup() {
 
     function theme_enqueue_styles() {
         if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-            #wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+            wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 
             #wp_register_style('print', get_stylesheet_directory_uri() . '/css/print.min.css', 'style', '1.0', 'print', array('myStyle'));
             #wp_enqueue_style('print');
+            wp_enqueue_style('fonts', get_stylesheet_directory_uri() . '/css/fonts.css', 'style', '1.0', 'all', array());
             //Individual Style
-            wp_enqueue_style('kibasa-customs-style', get_stylesheet_directory_uri() . '/css/kibasa-custom.css', 'style', '1.0', 'all', array());
+            wp_enqueue_style('kibasa-customs-style', get_stylesheet_directory_uri() . '/css/kibasa-custom.css', 'style', '20200317', 'all', array('parent-sytle','fonts'));
         }
     }
     add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
